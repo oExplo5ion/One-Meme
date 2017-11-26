@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/clear"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/logo"
+        android:background="@color/memeImageBackground"
+        android:elevation="1dp"
+        android:id="@+id/bgImageView"
+        android:maxWidth="@dimen/memeMaxSize"
+        android:minHeight="@dimen/memeMaxSize" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/memeImage"
+        android:elevation="1dp"
+        android:background="@color/clear" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/clear"
+        android:elevation="2dp"
+        android:id="@+id/pickImageBtn" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textCapCharacters"
+        android:ems="10"
+        android:id="@+id/topText"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@color/clear"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:elevation="3dp"
+        android:maxLines="3"
+        android:hint="@string/memeHint"
+        android:shadowColor="@color/black"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textCapCharacters"
+        android:ems="10"
+        android:id="@+id/bottomText"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif"
+        android:elevation="3dp"
+        android:background="@color/clear"
+        android:layout_gravity="bottom|center"
+        android:maxLines="3"
+        android:hint="@string/memeHint"
+        android:shadowColor="@color/black"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" />
+
+</FrameLayout>

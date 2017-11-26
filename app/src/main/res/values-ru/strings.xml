@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onememeunit">ca-app-pub-7225805841617141/7110544712</string>
+
+    <string name="app_name">One Meme</string>
+    <string name="clear">Очистить</string>
+    <string name="settings">Настройки</string>
+    <string name="memeHint">ТЕКСТ</string>
+    <string name="warning">Внимание!</string>
+    <string name="grandPermission">Разрешить</string>
+    <string name="chooseOption">Опции</string>
+    <string name="memeOption">Что будем делать с этим чудесным мемом?</string>
+    <string name="cancel">Отменить</string>
+    <string name="save">Сохранить</string>
+    <string name="share">Отправить</string>
+    <string name="permissionDeniedSave">One Meme не может сохранить или отправить мем пока нет доступа к памяти</string>
+    <string name="permissionDeniedCamera">One Meme не может вызвать камеру пока нет доступа к памяти</string>
+    <string name="selectImage">Выберете изображение</string>
+    <string name="fillInTextArea">Упсс.. Пожалуйста заполните текстовое поле.</string>
+    <string name="cameraIsNotSuported">Камера не доступна</string>
+    <string name="okay">Хорошо</string>
+    <string name="takeApic">Сделать снимок</string>
+    <string name="chooseImg">Выбрать изображение</string>
+    <string name="shadow">Тень</string>
+    <string name="textColor">Цвет текста</string>
+    <string name="imageSaved">Изображение сохранено</string>
+</resources>

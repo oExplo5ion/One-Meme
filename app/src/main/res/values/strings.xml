@@ -1,0 +1,26 @@
+<resources>
+    <string name="onememeunit">ca-app-pub-7225805841617141/7110544712</string>
+
+    <string name="app_name">One Meme</string>
+    <string name="clear">Clear</string>
+    <string name="settings">Settings</string>
+    <string name="memeHint">TEXT</string>
+    <string name="warning">Warning!</string>
+    <string name="grandPermission">Grand permission</string>
+    <string name="chooseOption">Choose option</string>
+    <string name="memeOption">What do you want to do with that great meme?</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="permissionDeniedSave">One Meme is not able to save or share meme until does not have storage permission</string>
+    <string name="permissionDeniedCamera">One Meme is not able to call camera until it does not have storage permission</string>
+    <string name="selectImage">Select Image</string>
+    <string name="fillInTextArea">Opss.. Please fill in text area.</string>
+    <string name="cameraIsNotSuported">Camera is not supported</string>
+    <string name="okay">Okay</string>
+    <string name="takeApic">Take a pitcure</string>
+    <string name="chooseImg">Choose image</string>
+    <string name="shadow">Shadow</string>
+    <string name="textColor">Text color</string>
+    <string name="imageSaved">Image saved</string>
+</resources>

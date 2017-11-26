@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:id="@+id/superFrame"
+    android:layout_gravity="top">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rootLinear">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/shadow"
+            android:enabled="false"
+            android:background="@color/clear"
+            android:textColor="@android:color/white"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="@dimen/settingsMargins" />
+
+        <SeekBar
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="0"
+            android:thumbTint="@color/white"
+            android:progressTint="@color/white"
+            android:id="@+id/seekBar"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:layout_marginTop="@dimen/settingsMargins"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/textColor"
+            android:enabled="false"
+            android:textColor="@android:color/white"
+            android:ems="10"
+            android:background="@color/clear"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="@dimen/settingsMargins" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settingsMargins"
+            android:layout_gravity="center">
+
+            <Button
+                android:background="@drawable/one_meme_white_button"
+                android:id="@+id/whiteColorBtn"
+                android:layout_gravity="start"
+                android:layout_height="48dp"
+                android:layout_width="48dp" />
+
+            <Button
+                android:background="@drawable/one_meme_black_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/blackColorBtn"
+                android:layout_gravity="end"
+                android:layout_marginLeft="100dp" />
+        </FrameLayout>
+
+        <Button
+            android:text="@string/takeApic"
+            android:textColor="@color/white"
+            android:background="@drawable/one_meme_button"
+            android:layout_height="48dp"
+            android:id="@+id/tpicBtn"
+            android:minWidth="@dimen/settingsButtonMaxWidth"
+            android:layout_width="@dimen/settingsButtonMaxWidth"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/settingsMargins" />
+
+        <Button
+            android:text="@string/chooseImg"
+            android:textColor="@color/white"
+            android:background="@drawable/one_meme_button"
+            android:layout_height="48dp"
+            android:id="@+id/choosePicBtn"
+            android:minWidth="@dimen/settingsButtonMaxWidth"
+            android:layout_width="@dimen/settingsButtonMaxWidth"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/settingsMargins" />
+
+        <Button
+            android:text="@string/cancel"
+            android:layout_height="48dp"
+            android:id="@+id/cancelSettingsBtn"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"
+            android:minWidth="@dimen/settingsButtonMaxWidth"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/settingsMargins" />
+
+    </LinearLayout>
+</FrameLayout>

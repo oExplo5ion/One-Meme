@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="optionBtn_margin">20dp</dimen>
+    <dimen name="memeSize">300dp</dimen>
+    <dimen name="memeMaxSize">350dp</dimen>
+    <dimen name="settingsButtonMaxWidth">200dp</dimen>
+    <dimen name="settingsMargins">10dp</dimen>
+</resources>
