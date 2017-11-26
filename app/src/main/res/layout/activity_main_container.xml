@@ -112,18 +112,20 @@
         android:visibility="invisible"/>
 
     <FrameLayout
+        android:id="@+id/settingsFrame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settingsFrame"
-        android:clipChildren="false"
         android:layout_below="@+id/optionsFrameLayout"
-        android:layout_marginTop="1dp">
+        android:layout_marginTop="1dp"
+        android:clipChildren="false"
+        android:elevation="12dp">
+
         <fragment
+            android:id="@+id/settingsFragment"
+            android:name="com.alekseyrobul.one_meme.classes.SettingsFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="com.alekseyrobul.one_meme.classes.SettingsFragment"
-            android:id="@+id/settingsFragment"
-            tools:layout="@layout/settings_fragment"/>
+            tools:layout="@layout/settings_fragment" />
     </FrameLayout>
 
 </RelativeLayout>
