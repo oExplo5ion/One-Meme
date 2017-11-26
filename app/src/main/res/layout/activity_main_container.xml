@@ -12,61 +12,60 @@
     tools:context="com.alekseyrobul.one_meme.classes.MainContainerActivity">
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
         android:id="@+id/optionsFrameLayout"
-        android:tag="optionsTag"
-        android:elevation="1dp"
+        android:layout_width="match_parent"
         android:layout_height="30mm"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:elevation="0dp"
+        android:tag="optionsTag">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="69dp"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/onememeunit"
-            android:layout_centerHorizontal="false"
             android:layout_alignParentBottom="false"
-            android:layout_gravity="bottom">
-        </com.google.android.gms.ads.AdView>
+            android:layout_centerHorizontal="false"
+            android:layout_gravity="bottom"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/onememeunit"></com.google.android.gms.ads.AdView>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="120dp">
 
             <Button
-                android:text="@string/clear"
-                android:textColor="@color/white"
-                android:background="@drawable/one_meme_button"
-                android:layout_height="wrap_content"
                 android:id="@+id/clearBtn"
-                android:layout_marginTop="@dimen/optionBtn_margin"
-                tools:ignore="RtlHardcoded"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginRight="100dp"
-                android:layout_width="100dp" />
+                android:layout_marginTop="@dimen/optionBtn_margin"
+                android:background="@drawable/one_meme_button"
+                android:text="@string/clear"
+                android:textColor="@color/white"
+                tools:ignore="RtlHardcoded" />
 
             <Button
+                android:id="@+id/shareBtn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="@dimen/optionBtn_margin"
+                android:background="@drawable/one_meme_button"
                 android:text="@string/share"
                 android:textColor="@color/white"
-                android:background="@drawable/one_meme_button"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/shareBtn"
-                android:layout_marginTop="@dimen/optionBtn_margin"
-                tools:ignore="HardcodedText,RtlHardcoded"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="100dp" />
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
             <Button
-                android:text="@string/settings"
-                android:textColor="@color/white"
-                android:background="@drawable/one_meme_button"
+                android:id="@+id/settingsBtn"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/settingsBtn"
-                android:layout_gravity="bottom|center" />
+                android:layout_gravity="bottom|center"
+                android:background="@drawable/one_meme_button"
+                android:text="@string/settings"
+                android:textColor="@color/white" />
         </FrameLayout>
 
     </FrameLayout>
@@ -103,6 +102,14 @@
                 tools:layout="@layout/meme_fragment" />
         </FrameLayout>
     </FrameLayout>
+
+    <Button
+        android:id="@+id/main_ovrl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/clear"
+        android:enabled="false"
+        android:visibility="invisible"/>
 
     <FrameLayout
         android:layout_width="match_parent"
