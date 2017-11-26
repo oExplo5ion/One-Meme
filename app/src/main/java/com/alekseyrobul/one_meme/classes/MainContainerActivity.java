@@ -247,12 +247,16 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
             case RequestCodes.MY_PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE:{
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED){
                     showPermissionDeniedAlertDialog(getResources().getString(R.string.permissionDeniedSave));
+                }else{
+                    showImageDialog();
                 }
                 break;
             }
             case RequestCodes.MY_PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE_FROM_FRAGMENT:{
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED){
                     showPermissionDeniedAlertDialog(getResources().getString(R.string.permissionDeniedCamera));
+                }else {
+                    showImageDialog();
                 }
                 break;
             }
