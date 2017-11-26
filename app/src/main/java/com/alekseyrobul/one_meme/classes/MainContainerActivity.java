@@ -68,6 +68,14 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
             }
         });
 
+        Button ovrlBtn = (Button) findViewById(R.id.main_ovrl_btn);
+        ovrlBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showOptionsView();
+            }
+        });
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             getWindow().setNavigationBarColor(ContextCompat.getColor(this.getBaseContext(), R.color.colorPrimary));
         }
@@ -116,6 +124,7 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
         View settingsView = findViewById(R.id.settingsFrame);
         moveViewUp(settingsView);
 
+        setOverlayBtnEnabled();
         superView.setClickable(true);
 
     }
@@ -133,6 +142,7 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
         View optionsView = findViewById(R.id.optionsFrameLayout);
         moveViewUp(optionsView);
 
+        setOverlayBtnDisabled();
         superView.setClickable(true);
 
     }
@@ -214,6 +224,20 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
     private void hideAd(){
         View ad = findViewById(R.id.adView);
         ad.setVisibility(View.INVISIBLE);
+    }
+
+    private void setOverlayBtnEnabled(){
+
+        Button ovrlBtn = (Button) findViewById(R.id.main_ovrl_btn);
+        ovrlBtn.setEnabled(true);
+        ovrlBtn.setVisibility(View.VISIBLE);
+
+    }
+
+    private void setOverlayBtnDisabled(){
+        Button ovrlBtn = (Button) findViewById(R.id.main_ovrl_btn);
+        ovrlBtn.setEnabled(false);
+        ovrlBtn.setVisibility(View.INVISIBLE);
     }
 
     @Override
