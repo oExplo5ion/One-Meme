@@ -2,6 +2,7 @@ package com.alekseyrobul.one_meme.classes;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -12,6 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -152,7 +155,7 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-    private void startCamera(){
+    public void startCamera(){
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
@@ -182,6 +185,7 @@ public class SettingsFragment extends Fragment {
     }
 
     private File createImageFile() throws IOException {
+
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
@@ -192,15 +196,36 @@ public class SettingsFragment extends Fragment {
             tempDir.mkdirs();
         }
         return File.createTempFile(imageFileName, ".jpg", tempDir);
+
     }
 
     private void settingsCancel(){
         mSettingsDelegate.settingsCancelTapped();
     }
 
+    private void showPermissionDeniedAlertDialog(String message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(getResources().getString(R.string.warning));
+        builder.setMessage(message);
+        builder.setPositiveButton(getResources().getString(R.string.grandPermission), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.fromParts("package", getActivity().getPackageName(), null));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        builder.show();
+
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        // receive taken image
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 
             Bitmap bitmap = null;
@@ -214,5 +239,23 @@ public class SettingsFragment extends Fragment {
             }
             mSettingsDelegate.imageCaptured(bitmap);
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+            case MY_PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE_FROM_FRAGMENT:
+
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    startCamera();
+                }else{
+                    showPermissionDeniedAlertDialog(getResources().getString(R.string.permissionDeniedSave));
+                }
+
+                break;
+        }
+
     }
 }

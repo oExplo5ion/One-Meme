@@ -256,7 +256,8 @@ public class MainContainerActivity extends AppCompatActivity implements MemeFrag
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED){
                     showPermissionDeniedAlertDialog(getResources().getString(R.string.permissionDeniedCamera));
                 }else {
-                    showImageDialog();
+                    SettingsFragment settingsFragment = (SettingsFragment) getSupportFragmentManager().findFragmentById(R.id.settingsFragment);
+                    settingsFragment.startCamera();
                 }
                 break;
             }

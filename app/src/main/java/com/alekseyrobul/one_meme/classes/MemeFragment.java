@@ -212,7 +212,6 @@ public class MemeFragment extends Fragment{
         builder.show();
     }
 
-
     public void setTextBorderWidth(int w) {
         shadowWidth = w;
         updateEditTextShadow(topText,w);
