@@ -15,41 +15,41 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="69dp"
+        android:layout_above="@+id/main_optset_lay"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="false"
-        android:layout_gravity="bottom"
         ads:adSize="BANNER"
         ads:adUnitId="@string/onememeunit"></com.google.android.gms.ads.AdView>
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_above="@+id/optionsFrameLayout"
         android:id="@+id/memeFrameLayout"
-        android:minHeight="@dimen/memeMaxSize"
-        android:minWidth="@dimen/memeMaxSize"
-        android:layout_alignParentBottom="false"
+        android:layout_width="match_parent"
         android:layout_height="330dp"
-        android:layout_gravity="top"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:minHeight="@dimen/memeMaxSize"
+        android:minWidth="@dimen/memeMaxSize">
 
         <FrameLayout
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center"
             android:id="@+id/memeFrame"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="15dp"
             android:minHeight="@dimen/memeMaxSize"
             android:minWidth="@dimen/memeMaxSize"
-            android:layout_width="300dp"
-            tools:ignore="UselessParent"
-            android:layout_height="300dp">
+            tools:ignore="UselessParent">
 
             <fragment
+                android:id="@+id/memeFragment"
+                android:name="com.alekseyrobul.one_meme.classes.MemeFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:name="com.alekseyrobul.one_meme.classes.MemeFragment"
-                android:id="@+id/memeFragment"
                 tools:layout="@layout/meme_fragment" />
         </FrameLayout>
     </FrameLayout>
@@ -63,30 +63,31 @@
         android:visibility="gone" />
 
     <LinearLayout
+        android:id="@+id/main_optset_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <FrameLayout
             android:id="@+id/optionsFrameLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentBottom="false"
             android:background="@color/colorPrimary"
             android:elevation="0dp"
             android:tag="optionsTag">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp">
+                android:layout_height="100dp">
 
                 <Button
                     android:id="@+id/clearBtn"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginRight="100dp"
-                    android:layout_marginTop="@dimen/optionBtn_margin"
                     android:background="@drawable/one_meme_button"
                     android:text="@string/clear"
                     android:textColor="@color/white"
@@ -97,8 +98,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="@dimen/optionBtn_margin"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/one_meme_button"
                     android:text="@string/share"
                     android:textColor="@color/white"
@@ -108,7 +108,6 @@
                     android:id="@+id/settingsBtn"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
                     android:background="@drawable/one_meme_button"
                     android:text="@string/settings"
                     android:textColor="@color/white" />
@@ -120,8 +119,7 @@
             android:id="@+id/settingsFrame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipChildren="false"
-            android:elevation="12dp">
+            android:clipChildren="false">
 
             <fragment
                 android:id="@+id/settingsFragment"
