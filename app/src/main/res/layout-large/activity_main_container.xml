@@ -11,64 +11,15 @@
     android:background="@color/colorPrimaryDark"
     tools:context="com.alekseyrobul.one_meme.classes.MainContainerActivity">
 
-    <FrameLayout
-        android:id="@+id/optionsFrameLayout"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
         android:layout_width="match_parent"
-        android:layout_height="30mm"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:elevation="0dp"
-        android:tag="optionsTag">
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:layout_alignParentBottom="false"
-            android:layout_centerHorizontal="false"
-            android:layout_gravity="bottom"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/onememeunit"></com.google.android.gms.ads.AdView>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-
-            <Button
-                android:id="@+id/clearBtn"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginRight="100dp"
-                android:layout_marginTop="@dimen/optionBtn_margin"
-                android:background="@drawable/one_meme_button"
-                android:text="@string/clear"
-                android:textColor="@color/white"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/shareBtn"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="@dimen/optionBtn_margin"
-                android:background="@drawable/one_meme_button"
-                android:text="@string/share"
-                android:textColor="@color/white"
-                tools:ignore="HardcodedText,RtlHardcoded" />
-
-            <Button
-                android:id="@+id/settingsBtn"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:background="@drawable/one_meme_button"
-                android:text="@string/settings"
-                android:textColor="@color/white" />
-        </FrameLayout>
-
-    </FrameLayout>
+        android:layout_height="69dp"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="false"
+        android:layout_gravity="bottom"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/onememeunit"></com.google.android.gms.ads.AdView>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -109,23 +60,77 @@
         android:layout_height="match_parent"
         android:background="@color/clear"
         android:enabled="false"
-        android:visibility="invisible"/>
+        android:visibility="gone" />
 
-    <FrameLayout
-        android:id="@+id/settingsFrame"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/optionsFrameLayout"
-        android:layout_marginTop="1dp"
-        android:clipChildren="false"
-        android:elevation="12dp">
+        android:orientation="horizontal">
 
-        <fragment
-            android:id="@+id/settingsFragment"
-            android:name="com.alekseyrobul.one_meme.classes.SettingsFragment"
-            android:layout_width="match_parent"
+        <FrameLayout
+            android:id="@+id/optionsFrameLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout="@layout/settings_fragment" />
-    </FrameLayout>
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:elevation="0dp"
+            android:tag="optionsTag">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <Button
+                    android:id="@+id/clearBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginTop="@dimen/optionBtn_margin"
+                    android:background="@drawable/one_meme_button"
+                    android:text="@string/clear"
+                    android:textColor="@color/white"
+                    tools:ignore="RtlHardcoded" />
+
+                <Button
+                    android:id="@+id/shareBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="@dimen/optionBtn_margin"
+                    android:background="@drawable/one_meme_button"
+                    android:text="@string/share"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <Button
+                    android:id="@+id/settingsBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:background="@drawable/one_meme_button"
+                    android:text="@string/settings"
+                    android:textColor="@color/white" />
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/settingsFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:elevation="12dp">
+
+            <fragment
+                android:id="@+id/settingsFragment"
+                android:name="com.alekseyrobul.one_meme.classes.SettingsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/settings_fragment" />
+        </FrameLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
