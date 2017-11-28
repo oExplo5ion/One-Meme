@@ -9,13 +9,13 @@
     <LinearLayout
         android:id="@+id/rootLinear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="150dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/settings_shadow_lbl"
@@ -47,7 +47,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/settings_textcolor_lbl"
@@ -90,11 +90,11 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/tpicBtn3"
-                android:layout_width="@dimen/settingsButtonMaxWidth"
+                android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/settingsMargins"
@@ -106,7 +106,7 @@
 
             <Button
                 android:id="@+id/choosePicBtn3"
-                android:layout_width="@dimen/settingsButtonMaxWidth"
+                android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="55dp"

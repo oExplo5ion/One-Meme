@@ -67,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -75,43 +76,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="false"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
             android:background="@color/colorPrimary"
             android:elevation="0dp"
             android:tag="optionsTag">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
+            <Button
+                android:id="@+id/clearBtn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/one_meme_button"
+                android:text="@string/clear"
+                android:textColor="@color/white"
+                tools:ignore="RtlHardcoded" />
 
-                <Button
-                    android:id="@+id/clearBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/one_meme_button"
-                    android:text="@string/clear"
-                    android:textColor="@color/white"
-                    tools:ignore="RtlHardcoded" />
-
-                <Button
-                    android:id="@+id/shareBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/one_meme_button"
-                    android:text="@string/share"
-                    android:textColor="@color/white"
-                    tools:ignore="HardcodedText,RtlHardcoded" />
-
-                <Button
-                    android:id="@+id/settingsBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/one_meme_button"
-                    android:text="@string/settings"
-                    android:textColor="@color/white" />
-            </FrameLayout>
+            <Button
+                android:id="@+id/shareBtn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/one_meme_button"
+                android:text="@string/share"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
         </FrameLayout>
 
